@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2022. Explore in HMS. All rights reserved.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <dimen name="bg_options_radius">@dimen/dp48</dimen>
+    <dimen name="height_lottie_landmarks_travel_plane">256dp</dimen>
+    <dimen name="design_fab_image_size" tools:override="true">@dimen/dp48</dimen>
+    <dimen name="dialog_radius">16dp</dimen>
+
+    <!--region POSITIVE VALUES -->
+
+    <dimen name="dp0">0dp</dimen>
+    <dimen name="dp8">8dp</dimen>
+    <dimen name="dp16">16dp</dimen>
+    <dimen name="sp16">16sp</dimen>
+    <dimen name="sp24">24sp</dimen>
+    <dimen name="dp32">32dp</dimen>
+    <dimen name="dp40">40dp</dimen>
+    <dimen name="dp48">48dp</dimen>
+
+    <!--endregion-->
+
+    <!--region MINUS VALUES -->
+
+    <dimen name="dp_8">-8dp</dimen>
+    <dimen name="dp_12">-12dp</dimen>
+    <dimen name="dp_16">-16dp</dimen>
+    <dimen name="dp_32">-32dp</dimen>
+    <dimen name="dp_48">-48dp</dimen>
+    <dimen name="dp_40">-40dp</dimen>
+
+    <!--endregion-->
+
+    <!--region CARD VIEW -->
+
+    <dimen name="cv_corner_radius">8dp</dimen>
+    <dimen name="cv_corner_radius_m">16dp</dimen>
+    <dimen name="cv_corner_radius_l">32dp</dimen>
+    <dimen name="cv_card_elevation">4dp</dimen>
+
+    <!--endregion-->
+
+    <!--region TEXTS SIZES  -->
+
+    <dimen name="desc_text_size">@dimen/sp16</dimen>
+    <dimen name="title_text_size">@dimen/sp24</dimen>
+
+    <!--endregion-->
+
+    <!--region SPACES-->
+    <dimen name="padding_root_layout">24dp</dimen>
+    <dimen name="padding_item_root_layout">@dimen/padding_small</dimen>
+    <dimen name="padding_small">@dimen/dp8</dimen>
+    <dimen name="padding_medium">@dimen/dp16</dimen>
+    <dimen name="space_between_views">@dimen/dp16</dimen>
+
+    <!--endregion-->
+
+
+    <!-- region ICONS SIZE -->
+
+    <dimen name="close_icon_size">24dp</dimen>
+    <dimen name="profile_icon_size">48dp</dimen>
+    <dimen name="seperator_height">1dp</dimen>
+
+    <!--endregion-->
+
+</resources>

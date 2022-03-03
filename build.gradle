@@ -1,0 +1,32 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+
+    ext {
+        build_gradle_version = '7.1.2'
+        kotlin_gradle_plugin_version = '1.6.10'
+        hilt_gradle_plugin_version = '2.40.1'
+        agconnect_agcp_version = '1.6.2.200'
+        navigation_version = '2.4.1'
+        sonarqube_plugin_version = "3.0"
+    }
+
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://developer.huawei.com/repo/' }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$build_gradle_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_gradle_plugin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_gradle_plugin_version"
+        classpath "com.huawei.agconnect:agcp:$agconnect_agcp_version"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

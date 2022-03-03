@@ -1,0 +1,38 @@
+<!--
+  ~ Copyright 2022. Explore in HMS. All rights reserved.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="app_name">Explore Landmarks</string>
+    <string name="warning_grant_permissions">We need to permissions for serving services to you</string>
+    <string name="grant">Grant</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="signup">SignUp</string>
+    <string name="warning_input">Please Fill Here</string>
+    <string name="error_obtain_credential_content">Cannot obtain your password</string>
+    <string name="error_no_credenntials_signup">No any saved credentials. Please SignUp</string>
+    <string name="error_no_lanmark_description">Can not find landmark information</string>
+    <string name="error_general_unknown">An error occurred. Please try later.</string>
+    <string name="saved_accounts">SignIn with Saved Accounts</string>
+    <string name="error_no_landmark">No Landmark</string>
+    <string name="landmark_image_gallery">Landmark Image Gallery</string>
+    <string name="landmark_panoramic_video">Landmark Panoramic Video</string>
+    <string name="landmark_panoramic_image">Landmark Panoramic Image</string>
+    <string name="masked_password">* * * * * * * *</string>
+    <string name="continue_with">Continue With</string>
+    <string name="success_credential_deleted">Credential Deleted</string>
+</resources>

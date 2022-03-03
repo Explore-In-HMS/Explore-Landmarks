@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2022. Explore in HMS. All rights reserved.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import
+            alias="loadingType"
+            type="com.hms.explorelandmarks.data.enums.ImageLoadingType" />
+
+        <variable
+            name="item"
+            type="com.huawei.hms.searchkit.bean.ImageItem" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/cv_corner_radius_m"
+        app:cardElevation="@dimen/cv_card_elevation">
+
+        <com.flaviofaria.kenburnsview.KenBurnsView
+            android:id="@+id/kbvLocation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:loadImage="@{item.source_image.image_content_url}"
+            app:loadingType="@{loadingType.WITH_SHIMMER_PLACE_HOLDER}" />
+
+    </androidx.cardview.widget.CardView>
+</layout>
