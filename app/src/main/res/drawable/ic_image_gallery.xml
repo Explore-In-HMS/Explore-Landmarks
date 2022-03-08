@@ -1,0 +1,39 @@
+<!--
+  ~ Copyright 2022. Explore in HMS. All rights reserved.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:autoMirrored="true"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="#E65100"
+        android:pathData="M41,42H13c-2.2,0 -4,-1.8 -4,-4V18c0,-2.2 1.8,-4 4,-4h28c2.2,0 4,1.8 4,4v20C45,40.2 43.2,42 41,42z" />
+    <path
+        android:fillColor="#F57C00"
+        android:pathData="M35,36H7c-2.2,0 -4,-1.8 -4,-4V12c0,-2.2 1.8,-4 4,-4h28c2.2,0 4,1.8 4,4v20C39,34.2 37.2,36 35,36z" />
+    <path
+        android:fillColor="#FFF9C4"
+        android:pathData="M30,16m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0" />
+    <path
+        android:fillColor="#942A09"
+        android:pathData="M17,17.9l-9,13.1l18,0z" />
+    <path
+        android:fillColor="#BF360C"
+        android:pathData="M28,23.5l-6,7.5l12,0z" />
+</vector>

@@ -1,0 +1,149 @@
+/*
+ * Copyright 2022. Explore in HMS. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'com.huawei.agconnect'
+    id "androidx.navigation.safeargs.kotlin"
+    id "org.sonarqube" version "$sonarqube_plugin_version"
+}
+
+apply from: '../dependencies.gradle'
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.hms.explorelandmarks"
+        minSdk 24
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "AGC_APP_ID_VALUE", '"todo"' //todo
+        buildConfigField "String", "API_KEY_VALUE", '"todo"' //todo
+        buildConfigField "String", "CLIENT_ID", '"todo"' //todo
+        buildConfigField "String", "CLIENT_SECRET", '"todo"' //todo
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('ExploreLandmarks.jks')
+            keyAlias 'key0'
+            keyPassword 'ExploreLandmarks'
+            storePassword 'ExploreLandmarks'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            debuggable true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        buildConfig = true
+        dataBinding true
+    }
+}
+
+dependencies {
+
+    implementation core.corektx
+    implementation core.material
+    implementation core.appcompat
+    implementation core.constraintlayout
+
+    implementation testing.junit
+    implementation testing.espresso
+    implementation testing.androidExtJunit
+
+    implementation lifecycle.runtimeKtx
+    implementation fragment.fragmentKtx
+    implementation lifecycle.livedataKtx
+    implementation lifecycle.viewmodelKtx
+
+    // Dependency Injection
+    kapt dependencyInjection.hiltCompiler
+    implementation dependencyInjection.hilt
+
+    //Network
+    implementation network.coroutines
+    implementation network.retrofit
+    implementation network.converterGson
+    implementation network.loggingInterceptor
+
+    // Navigation Component
+    implementation navigation.navigationUiKtx
+    implementation navigation.navigationRuntimeKtx
+    implementation navigation.navigationFragmentKtx
+
+    //Huawei Kits and Services
+    implementation huawei.searchKit
+    implementation huawei.panoramaKit
+    implementation huawei.keyringService
+    implementation huawei.panoramaLocalKit
+    implementation huawei.machineLearningKit
+    implementation huawei.crashlyticsService
+    implementation huawei.analyticsService
+
+    implementation image.lottie
+
+    implementation animation.shimmer
+
+    implementation image.kenburnsview
+
+    implementation image.glide
+    annotationProcessor image.glideCompiler
+
+    //Dot Indicator as Instagram
+    implementation indicator.scrollingPagerIndicator
+
+}
+
+sonarqube {
+    properties {
+        def localProperties = new Properties()
+        localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
+        property "sonar.projectKey", localProperties['sonar.projectKey']
+        property "sonar.projectName", localProperties['sonar.projectName']
+        property "sonar.login", localProperties['sonar.login']
+        property "sonar.host.url", localProperties['sonar.host.url']
+        property "sonar.projectVersion", android.defaultConfig.versionName
+    }
+}

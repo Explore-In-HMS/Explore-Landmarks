@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2022. Explore in HMS. All rights reserved.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.hms.explorelandmarks.ui.landmark_detail.LandmarkDetailViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/bg_fragment_root"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context=".ui.landmark_detail.LandmarkDetailFragment">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_landmark_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:transitionName="detailImageTransitionName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:setBitmap="@{vm.currentLandmark.landmarkRecognizedImage}"
+            tools:srcCompat="@drawable/app_icon" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_landmark_name"
+            style="@style/ColoredTitleTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_between_views"
+            android:layout_marginTop="@dimen/dp32"
+            android:layout_marginEnd="@dimen/space_between_views"
+            android:layout_marginBottom="@dimen/space_between_views"
+            android:text="@{vm.currentLandmark.landmarkName}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_landmark_image"
+            tools:text="Eiffel Tower" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/space_between_views"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_landmark_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_landmark_name">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_landmark_information"
+                style="@style/DescriptionTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/space_between_views"
+                android:ellipsize="end"
+                android:text="@{vm.currentLandmark.landmarkDescription}"
+                tools:text="Eiffel Tower Eiffel TowerEiffel TowerEiffel TowerEiffel TowerEiffel TowerEiffel TowerEiffel TowerEiffel TowerEiffel TowerEiffel Tower" />
+        </ScrollView>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/padding_small"
+            android:background="@drawable/bg_options_button"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/padding_medium"
+            android:paddingTop="@dimen/padding_small"
+            android:paddingEnd="@dimen/padding_medium"
+            android:paddingBottom="@dimen/padding_small"
+            app:layout_constraintBottom_toBottomOf="@id/img_landmark_image"
+            app:layout_constraintEnd_toEndOf="@id/img_landmark_image"
+            app:layout_constraintTop_toBottomOf="@id/img_landmark_image">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_image_gallery"
+                style="@style/FabStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/landmark_image_gallery"
+                app:srcCompat="@drawable/ic_image_gallery"
+                tools:visibility="visible" />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_show_panoramic_video"
+                style="@style/FabStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_between_views"
+                android:contentDescription="@string/landmark_panoramic_video"
+                android:visibility="@{vm.currentLandmark.landmarkPanoramicVideo == null ? View.GONE : View.VISIBLE, default=gone }"
+                app:srcCompat="@drawable/ic_panorama_video"
+                tools:visibility="visible" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_show_panoramic_image"
+                style="@style/FabStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_between_views"
+                android:contentDescription="@string/landmark_panoramic_image"
+                android:visibility="@{vm.currentLandmark.landmarkPanoramicImage == null ? View.GONE : View.VISIBLE, default=gone }"
+                app:srcCompat="@drawable/ic_panorama_image"
+                tools:visibility="visible" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
