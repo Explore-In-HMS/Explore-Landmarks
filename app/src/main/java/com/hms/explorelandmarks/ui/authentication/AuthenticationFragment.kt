@@ -55,6 +55,7 @@ class AuthenticationFragment :
 
     private fun saveCredential() {
         hideKeyboard()
+        resetInputErrors()
         observeStateLiveDataAndDoOnSuccess(
             mViewModel.saveCredential(),
             onFailureCallback = { errorCode, errorMessage, eventState ->
