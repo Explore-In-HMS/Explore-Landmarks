@@ -209,9 +209,15 @@ class CredentialManagementViewModel @Inject constructor(
     }
 
     /**
-     * If you will not share credentials to another app or platforms. You can return empty list
+     * When you will not share credentials to another app or platform you can return empty list.
+     *
+     * When you will share your credentials with other platforms, please provide needed information of them.
+     *      Don't forget to update Constants variables which used in below.
      * */
     private fun getTrustedAppsList(): List<AppIdentity> {
+        return emptyList()
+
+        // A list example of including information of platforms that sharing credentials with them
         return listOf<AppIdentity>(
             AndroidAppIdentity(
                 Constants.KEYRING_SOURCE_APP_NAME,
